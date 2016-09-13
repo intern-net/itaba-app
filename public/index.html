@@ -10,10 +10,19 @@
 		{
 			num++;
 			num %= 2;
-			document.myIMG.src = "img"+num+".png";
+			if(num == 0){
+				document.myIMG.src = "img"+num+".png";
+				document.getElementById("audio").pause();
+			}else if(num == 1){
+				document.myIMG.src = "img"+num+".png";
+				document.getElementById("audio").play();
+			}
 		}
 		// -->
 	</script>
+	<audio id="audio" preload="auto">
+   <source src="mondo.mp3" type="audio/mp3">
+	</audio>
   </head>
   <body>
 
