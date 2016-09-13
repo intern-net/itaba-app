@@ -1,7 +1,20 @@
 body {
         font-family: Roboto, Arial, sans-serif;
+        /* 
         background: #ECEFF1;
         color: rgba(0,0,0,0.87);
+        設定したい画像 */
+        background-image: url(/image/path);
+        /* 画像を上下左右中央寄せ */
+        background-position: center center;
+        /* タイル状には並べないように指定 */
+        background-repeat: no-repeat;
+        /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+        background-attachment: fixed;
+        /* 表示するディスプレイの大きさに基づいて、背景画像を縦横比を固定しながら調整 */
+        background-size: cover;
+        /* 画像が読み込まれる前の背景色の指定 */
+        background-color: #FFFFFF;
       }
 
       a {
@@ -48,4 +61,94 @@ body {
         border-radius: 3px;
         font-size: 14px;
         box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+      }
+      .c_japan{
+        background-color:#FFFFFF;
+        width:800px;
+        margin:auto;
+        }
+      .c_kantou{
+        background-color:#FFFFFF;
+        width:800px;
+        margin:auto;
+        }
+
+      .div_all{
+        margin:0;
+        font-family: Roboto, Arial, sans-serif;
+        color: #FFFFFF;
+        background-color:#FA5858;
+        width:400px;
+        height:60px;
+        float:left;
+        text-align: center;
+      }
+
+      .div_ent{
+        margin:0;
+        font-family: Roboto, Arial, sans-serif;
+        color: #FFFFFF;
+        background-color:#04B45F;
+        height:60px;
+        line-height: 60px;
+        text-align: center;
+      }
+      .div_it{
+        margin:0;
+        color: #FFFFFF;
+        background-color:#9A2EFE;
+        width:400px;
+        height:60px;
+        float:left;
+        text-align: center;
+      }
+
+      .div_fac{
+        margin:0;
+        color: #FFFFFF;
+        background-color:#FE9A2E;
+        height:60px;
+        line-height: 60px;
+        text-align: center;
+      }
+      .div_new{
+        margin:0;
+        color: #FFFFFF;
+        background-color:#0B3861;
+        width:400px;
+        height:60px;
+        float:left;
+        text-align: center;
+
+      }
+      
+
+      .div_gur{
+        margin:0;
+        color: #FFFFFF;
+        background-color:#F7819F;
+        height:60px;
+        line-height: 60px;
+        text-align: center;
+      }
+      .div_spo{
+        margin:0;
+        color: #FFFFFF;
+        background-color:#2E9AFE;
+        width:400px;
+        height:60px;
+        float:left;
+        text-align: center;
+      }
+
+      .div_hob{
+        margin:0;
+        color: #FFFFFF;
+        background-color:#58D3F7;
+        height:60px;
+        line-height: 60px;
+        text-align: center;
+      }
+      p{
+        line-height: 30px;
       }
