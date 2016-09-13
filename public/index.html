@@ -18,10 +18,77 @@
 				document.getElementById("audio").play();
 			}
 		}
+
+		function get_data(){
+		   //データ取得
+		   data = document.getElementById("hoge").innerHTML;
+		   if(data == 1){
+		   	//データ出力
+		   document.getElementById("output").innerHTML = data;
+		   }
+		}
+
+		window.onload = function () {
+		    var $sampleOutput = document.getElementById( "sampleOutput" );
+		    
+		    var $sampleAElements = document.getElementsByClassName( "div_all" );
+		    for( var $i = 0; $i < $sampleAElements.length; $i++ ) {
+		        $sampleAElements[$i].onclick = function () {
+		            $sampleOutput.innerHTML = "ALL"
+		        }
+		    }
+		    var $sampleBElements = document.getElementsByClassName( "div_ent" );
+		    for( var $i = 0; $i < $sampleBElements.length; $i++ ) {
+		        $sampleBElements[$i].onclick = function () {
+		            $sampleOutput.innerHTML = "ENTERTAINMENT"
+		        }
+		    }
+
+
+		     var $sampleAElements = document.getElementsByClassName( "div_it" );
+		    for( var $i = 0; $i < $sampleAElements.length; $i++ ) {
+		        $sampleAElements[$i].onclick = function () {
+		            $sampleOutput.innerHTML = "IT"
+		        }
+		    }
+		    var $sampleBElements = document.getElementsByClassName( "div_fac" );
+		    for( var $i = 0; $i < $sampleBElements.length; $i++ ) {
+		        $sampleBElements[$i].onclick = function () {
+		            $sampleOutput.innerHTML = "FASHION"
+		        }
+		    }
+
+
+		    var $sampleAElements = document.getElementsByClassName( "div_new" );
+		    for( var $i = 0; $i < $sampleAElements.length; $i++ ) {
+		        $sampleAElements[$i].onclick = function () {
+		            $sampleOutput.innerHTML = "NEWS"
+		        }
+		    }
+		    var $sampleBElements = document.getElementsByClassName( "div_gur" );
+		    for( var $i = 0; $i < $sampleBElements.length; $i++ ) {
+		        $sampleBElements[$i].onclick = function () {
+		            $sampleOutput.innerHTML = "GOURMET"
+		        }
+		    }
+
+		    var $sampleAElements = document.getElementsByClassName( "div_spo" );
+		    for( var $i = 0; $i < $sampleAElements.length; $i++ ) {
+		        $sampleAElements[$i].onclick = function () {
+		            $sampleOutput.innerHTML = "SPORTS"
+		        }
+		    }
+		    var $sampleBElements = document.getElementsByClassName( "div_hob" );
+		    for( var $i = 0; $i < $sampleBElements.length; $i++ ) {
+		        $sampleBElements[$i].onclick = function () {
+		            $sampleOutput.innerHTML = "HOBBY"
+		        }
+		    }
+		}
 		// -->
 	</script>
 	<audio id="audio" preload="auto">
-   <source src="mondo.mp3" type="audio/mp3">
+   <source src="sample.wav" type="audio/wav">
 	</audio>
   </head>
   <body>
@@ -65,9 +132,11 @@
     </div>
     </div>
    	
-
-
     <br>
+    <div id="sampleOutput" align="center">GENRE</div>
+    <div id="output" align="center">　</div>
+
+
     <div class="c_japan">
     <div class="c_kantou">
     <div class="div_cent">
