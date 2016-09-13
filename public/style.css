@@ -72,7 +72,22 @@ body {
         width:300px;
         margin:auto;
         }
+       .div_left{
+        margin:0;
+        float:left;
+      
+      }
+      .div_right{
+        margin:0;
+        float:left;
 
+      }
+      .div_cent{
+        margin:20;
+        
+        text-align: center;
+
+      }
       .div_all{
         margin:0;
         font-family: Roboto, Arial, sans-serif;
