@@ -4,7 +4,16 @@
     <meta charset="utf-8">
     <title>Welcome to Firebase Hosting</title>
      <link rel="stylesheet" type="text/css" href="style.css">
-    
+    <script language="JavaScript"><!--
+		num = 0;
+		function change()
+		{
+			num++;
+			num %= 2;
+			document.myIMG.src = "img"+num+".png";
+		}
+		// -->
+	</script>
   </head>
   <body>
 
@@ -46,17 +55,22 @@
 	</div>
     </div>
     </div>
+   	
+
 
     <br>
     <div class="c_japan">
     <div class="c_kantou">
     <div class="div_cent">
     	<img src="back.png" width="52" height="60" border="0">　　　
-    	<img src="saisei.png" width="52" height="60" border="0">　　
-    	<img src="for.png" width="52" height="60" border="0">
-<!-- 	    <div class="div_left"><img src="for.png" width="50"/>
-	    <div class="div_right"><img src="saisei.png" width="50"/>
-	    <div class="div_right"><img src="back.png" width="50"/> -->
+    	<!-- <img src="saisei.png" width="52" height="60" border="0"> -->
+
+    	<a href="javaScript:change()">
+		<img src="img0.png" name="myIMG" width="52" height="60" border="0">
+		</a>
+
+    	　　<img src="for.png" width="52" height="60" border="0">
+
 	</div>
     </div>
     </div>
