@@ -69,7 +69,7 @@ body {
         }
       .c_kantou{
         background-color:#FFFFFF;
-        width:800px;
+        width:300px;
         margin:auto;
         }
 
@@ -78,7 +78,7 @@ body {
         font-family: Roboto, Arial, sans-serif;
         color: #FFFFFF;
         background-color:#FA5858;
-        width:400px;
+        width:150px;
         height:60px;
         float:left;
         text-align: center;
@@ -97,7 +97,7 @@ body {
         margin:0;
         color: #FFFFFF;
         background-color:#9A2EFE;
-        width:400px;
+        width:150px;
         height:60px;
         float:left;
         text-align: center;
@@ -115,7 +115,7 @@ body {
         margin:0;
         color: #FFFFFF;
         background-color:#0B3861;
-        width:400px;
+        width:150px;
         height:60px;
         float:left;
         text-align: center;
@@ -135,7 +135,7 @@ body {
         margin:0;
         color: #FFFFFF;
         background-color:#2E9AFE;
-        width:400px;
+        width:150px;
         height:60px;
         float:left;
         text-align: center;
