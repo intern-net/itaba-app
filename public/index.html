@@ -91,7 +91,7 @@
 		// -->
 	</script>
 	<audio id="audio" preload="auto">
-   <source src="sample.wav" type="audio/wav">
+   		<source src="https://firebasestorage.googleapis.com/v0/b/favst-dojo.appspot.com/o/voices%2Fall%2F5696809452175360.mp4?alt=media&token=58555af3-4adf-4980-bd4a-8941184b5b77" type="audio/mp4">
 	</audio>
   </head>
   <body>
@@ -120,7 +120,7 @@
               console.log('ID:', id);
               console.log('Title:', val.title);
               console.log('LinkURL:', val.linkURL);
-              //console.log('VoiceURL:', voiceURL);
+              console.log('VoiceURL:', voiceURL);
               console.log('=====================================================================');
               });
           });
@@ -157,8 +157,8 @@
 	  aTag.attr("href", url)
 	  $("#art").text("");
 	  aTag.appendTo($("#art"));
+      $("#audio").attr("src", voiceURLs[index]);
       index++;
-      
     }
 
     function prev (){
@@ -171,7 +171,8 @@
 	  aTag.attr("href", url)
 	  $("#art").text("");
 	  aTag.appendTo($("#art"));
-        index--;
+      $("#audio").attr("src", voiceURLs[index]);
+      index--;
       }
     }
 
