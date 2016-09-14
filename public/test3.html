@@ -14,7 +14,7 @@ HelloWorld!
 <script>
     var title = [];
     var linkURL = [];
-    var voiceURL = [];
+    var voiceURLs = [];
 
     firebase.initializeApp({
     authDomain: 'favst-dojo.firebaseapp.com',
@@ -32,8 +32,7 @@ HelloWorld!
               console.log('Title:', val.title);
               title.push(val.title);
               linkURL.push(val.linkURL);
-              
-              voiceURL.push(val.voiceURL);
+              voiceURLs.push(voiceURL);
               console.log('ID:', id);
               console.log('Title:', val.title);
               console.log('LinkURL:', val.linkURL);

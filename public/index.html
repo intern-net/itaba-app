@@ -8,19 +8,114 @@
     <title>favclip station</title>
      <link rel="stylesheet" type="text/css" href="style.css">
     <script language="JavaScript"><!--
-		num = 0;
-		function change()
-		{
-			num++;
-			num %= 2;
-			if(num == 0){
-				document.myIMG.src = "img"+num+".png";
-				document.getElementById("audio").pause();
-			}else if(num == 1){
-				document.myIMG.src = "img"+num+".png";
-				document.getElementById("audio").play();
-			}
-		}
+
+		// function get_data(){
+		//    //データ取得
+		//    data = document.getElementById("hoge").innerHTML;
+		//    if(data == 1){
+		//    	//データ出力
+		//    document.getElementById("output").innerHTML = data;
+		//    }
+		// }
+
+		// window.onload = function () {
+		//     var $sampleOutput = document.getElementById( "sampleOutput" );
+		    
+		//     var $sampleAElements = document.getElementsByClassName( "div_all" );
+		//     for( var $i = 0; $i < $sampleAElements.length; $i++ ) {
+		//         $sampleAElements[$i].onclick = function () {
+		//             $sampleOutput.innerHTML = "ALL"
+		//             var title = title_all;
+		// 		    var linkURL = linkURL_all;
+		// 		    var voiceURLs = voiceURL_all;
+		//         }
+		//     }
+		//     var $sampleBElements = document.getElementsByClassName( "div_ent" );
+		//     for( var $i = 0; $i < $sampleBElements.length; $i++ ) {
+		//         $sampleBElements[$i].onclick = function () {
+		//             $sampleOutput.innerHTML = "ENTERTAINMENT"
+		//             var title = title_ent;
+		// 		    var linkURL = linkURL_ent;
+		// 		    var voiceURLs = voiceURL_ent;
+		// 		    console.log(title[index]);
+		// 		      //$("#art").text(title[index]);
+		// 		      var url = linkURL[index]
+		// 			  var aTag = $("<a>");
+		// 			  aTag.text(title[index]);
+		// 			  aTag.attr("href", url)
+		// 			  $("#art").text("");
+		// 			  aTag.appendTo($("#art"));
+		// 		      $("#audio").attr("src", voiceURLs[index]);
+		//         }
+		//     }
+
+
+		//      var $sampleAElements = document.getElementsByClassName( "div_it" );
+		//     for( var $i = 0; $i < $sampleAElements.length; $i++ ) {
+		//         $sampleAElements[$i].onclick = function () {
+		//             $sampleOutput.innerHTML = "IT"
+		//             var title = title_it;
+		// 		    var linkURL = linkURL_it;
+		// 		    var voiceURLs = voiceURL_it;
+		//         }
+		//     }
+		//     var $sampleBElements = document.getElementsByClassName( "div_fac" );
+		//     for( var $i = 0; $i < $sampleBElements.length; $i++ ) {
+		//         $sampleBElements[$i].onclick = function () {
+		//             $sampleOutput.innerHTML = "FASHION"
+		//             var title = title_fac;
+		// 		    var linkURL = linkURL_fac;
+		// 		    var voiceURLs = voiceURL_fac;
+		//         }
+		//     }
+
+
+		//     var $sampleAElements = document.getElementsByClassName( "div_new" );
+		//     for( var $i = 0; $i < $sampleAElements.length; $i++ ) {
+		//         $sampleAElements[$i].onclick = function () {
+		//             $sampleOutput.innerHTML = "NEWS"
+		//             var title = title_new;
+		// 		    var linkURL = linkURL_new;
+		// 		    var voiceURLs = voiceURL_new;
+		//         }
+		//     }
+		//     var $sampleBElements = document.getElementsByClassName( "div_gur" );
+		//     for( var $i = 0; $i < $sampleBElements.length; $i++ ) {
+		//         $sampleBElements[$i].onclick = function () {
+		//             $sampleOutput.innerHTML = "GOURMET"
+		//             var title = title_gur;
+		// 		    var linkURL = linkURL_gur;
+		// 		    var voiceURLs = voiceURL_gur;
+		//         }
+		//     }
+
+		//     var $sampleAElements = document.getElementsByClassName( "div_spo" );
+		//     for( var $i = 0; $i < $sampleAElements.length; $i++ ) {
+		//         $sampleAElements[$i].onclick = function () {
+		//             $sampleOutput.innerHTML = "SPORTS"
+		//             var title = title_spo;
+		// 		    var linkURL = linkURL_spo;
+		// 		    var voiceURLs = voiceURL_spo;
+		//         }
+		//     }
+		//     var $sampleBElements = document.getElementsByClassName( "div_hob" );
+		//     for( var $i = 0; $i < $sampleBElements.length; $i++ ) {
+		//         $sampleBElements[$i].onclick = function () {
+		//             $sampleOutput.innerHTML = "HOBBY"
+		//             var title = title_hob;
+		// 		    var linkURL = linkURL_hob;
+		// 		    var voiceURLs = voiceURL_hob;
+		//         }
+		//     }
+		// }
+		// -->
+	</script>
+	<audio id="audio" preload="auto">
+   		<source src="sample.wav" type="audio/wav">
+	</audio>
+  </head>
+  <body>
+<script>
 
 		function get_data(){
 		   //データ取得
@@ -38,12 +133,38 @@
 		    for( var $i = 0; $i < $sampleAElements.length; $i++ ) {
 		        $sampleAElements[$i].onclick = function () {
 		            $sampleOutput.innerHTML = "ALL"
+		            var title = title_all;
+				    var linkURL = linkURL_all;
+				    var voiceURLs = voiceURLs_all;
+				    console.log(title[index]);
+				      //$("#art").text(title[index]);
+				      var url = linkURL[index]
+					  var aTag = $("<a>");
+					  aTag.text(title[index]);
+					  aTag.attr("href", url)
+					  $("#art").text("");
+					  aTag.appendTo($("#art"));
+				      $("#audio").attr("src", voiceURLs[index]);
+				      index = 2;
 		        }
 		    }
 		    var $sampleBElements = document.getElementsByClassName( "div_ent" );
 		    for( var $i = 0; $i < $sampleBElements.length; $i++ ) {
 		        $sampleBElements[$i].onclick = function () {
 		            $sampleOutput.innerHTML = "ENTERTAINMENT"
+		            var title = title_ent;
+				    var linkURL = linkURL_ent;
+				    var voiceURLs = voiceURLs_ent;
+				    console.log(title[index]);
+				      //$("#art").text(title[index]);
+				      var url = linkURL[index]
+					  var aTag = $("<a>");
+					  aTag.text(title[index]);
+					  aTag.attr("href", url)
+					  $("#art").text("");
+					  aTag.appendTo($("#art"));
+				      $("#audio").attr("src", voiceURLs[index]);
+				      index = 2;
 		        }
 		    }
 
@@ -52,12 +173,38 @@
 		    for( var $i = 0; $i < $sampleAElements.length; $i++ ) {
 		        $sampleAElements[$i].onclick = function () {
 		            $sampleOutput.innerHTML = "IT"
+		            var title = title_it;
+				    var linkURL = linkURL_it;
+				    var voiceURLs = voiceURLs_it;
+				    console.log(title[index]);
+				      //$("#art").text(title[index]);
+				      var url = linkURL[index]
+					  var aTag = $("<a>");
+					  aTag.text(title[index]);
+					  aTag.attr("href", url)
+					  $("#art").text("");
+					  aTag.appendTo($("#art"));
+				      $("#audio").attr("src", voiceURLs[index]);
+				      index = 2;
 		        }
 		    }
 		    var $sampleBElements = document.getElementsByClassName( "div_fac" );
 		    for( var $i = 0; $i < $sampleBElements.length; $i++ ) {
 		        $sampleBElements[$i].onclick = function () {
 		            $sampleOutput.innerHTML = "FASHION"
+		            var title = title_fac;
+				    var linkURL = linkURL_fac;
+				    var voiceURLs = voiceURLs_fac;
+				    console.log(title[index]);
+				      //$("#art").text(title[index]);
+				      var url = linkURL[index]
+					  var aTag = $("<a>");
+					  aTag.text(title[index]);
+					  aTag.attr("href", url)
+					  $("#art").text("");
+					  aTag.appendTo($("#art"));
+				      $("#audio").attr("src", voiceURLs[index]);
+				      index = 2;
 		        }
 		    }
 
@@ -66,12 +213,38 @@
 		    for( var $i = 0; $i < $sampleAElements.length; $i++ ) {
 		        $sampleAElements[$i].onclick = function () {
 		            $sampleOutput.innerHTML = "NEWS"
+		            var title = title_new;
+				    var linkURL = linkURL_new;
+				    var voiceURLs = voiceURLs_new;
+				    console.log(title[index]);
+				      //$("#art").text(title[index]);
+				      var url = linkURL[index]
+					  var aTag = $("<a>");
+					  aTag.text(title[index]);
+					  aTag.attr("href", url)
+					  $("#art").text("");
+					  aTag.appendTo($("#art"));
+				      $("#audio").attr("src", voiceURLs[index]);
+				      index = 2;
 		        }
 		    }
 		    var $sampleBElements = document.getElementsByClassName( "div_gur" );
 		    for( var $i = 0; $i < $sampleBElements.length; $i++ ) {
 		        $sampleBElements[$i].onclick = function () {
 		            $sampleOutput.innerHTML = "GOURMET"
+		            var title = title_gur;
+				    var linkURL = linkURL_gur;
+				    var voiceURLs = voiceURLs_gur;
+				    console.log(title[index]);
+				      //$("#art").text(title[index]);
+				      var url = linkURL[index]
+					  var aTag = $("<a>");
+					  aTag.text(title[index]);
+					  aTag.attr("href", url)
+					  $("#art").text("");
+					  aTag.appendTo($("#art"));
+				      $("#audio").attr("src", voiceURLs[index]);
+				      index = 2;
 		        }
 		    }
 
@@ -79,27 +252,77 @@
 		    for( var $i = 0; $i < $sampleAElements.length; $i++ ) {
 		        $sampleAElements[$i].onclick = function () {
 		            $sampleOutput.innerHTML = "SPORTS"
+		            var title = title_spo;
+				    var linkURL = linkURL_spo;
+				    var voiceURLs = voiceURLs_spo;
+				    console.log(title[index]);
+				      //$("#art").text(title[index]);
+				      var url = linkURL[index]
+					  var aTag = $("<a>");
+					  aTag.text(title[index]);
+					  aTag.attr("href", url)
+					  $("#art").text("");
+					  aTag.appendTo($("#art"));
+				      $("#audio").attr("src", voiceURLs[index]);
+				      index = 2;
 		        }
 		    }
 		    var $sampleBElements = document.getElementsByClassName( "div_hob" );
 		    for( var $i = 0; $i < $sampleBElements.length; $i++ ) {
 		        $sampleBElements[$i].onclick = function () {
 		            $sampleOutput.innerHTML = "HOBBY"
+		            var title = title_hob;
+				    var linkURL = linkURL_hob;
+				    var voiceURLs = voiceURLs_hob;
+				    console.log(title[index]);
+				      //$("#art").text(title[index]);
+				      var url = linkURL[index]
+					  var aTag = $("<a>");
+					  aTag.text(title[index]);
+					  aTag.attr("href", url)
+					  $("#art").text("");
+					  aTag.appendTo($("#art"));
+				      $("#audio").attr("src", voiceURLs[index]);
+				      index = 2;
 		        }
 		    }
 		}
-		// -->
-	</script>
-	<audio id="audio" preload="auto">
-   		<source src="https://firebasestorage.googleapis.com/v0/b/favst-dojo.appspot.com/o/voices%2Fall%2F5696809452175360.mp4?alt=media&token=58555af3-4adf-4980-bd4a-8941184b5b77" type="audio/mp4">
-	</audio>
-  </head>
-  <body>
-<script>
     var title = [];
     var linkURL = [];
     var voiceURLs = [];
 
+    var title_all = [];
+    var linkURL_all = [];
+    var voiceURLs_all = [];
+
+    var title_ent = [];
+    var linkURL_ent = [];
+    var voiceURLs_ent = [];
+    
+    var title_it = [];
+    var linkURL_it = [];
+    var voiceURLs_it = [];
+    
+    var title_fac = [];
+    var linkURL_fac = [];
+    var voiceURLs_fac = [];
+    
+    var title_new = [];
+    var linkURL_new = [];
+    var voiceURLs_new = [];
+    
+    var title_gur = [];
+    var linkURL_gur = [];
+    var voiceURLs_gur = [];
+    
+    var title_spo = [];
+    var linkURL_spo = [];
+    var voiceURLs_spo = [];
+    
+    var title_hob = [];
+    var linkURL_hob = [];
+    var voiceURLs_hob = [];
+    
     firebase.initializeApp({
     authDomain: 'favst-dojo.firebaseapp.com',
     databaseURL: 'https://favst-dojo.firebaseio.com'
@@ -127,11 +350,141 @@
           console.log('reading done');
       });
 
-    console.log('Genres');
-    db.ref('/voices').once('value', function(snapshot) {
-        console.log(snapshot.val());
-        console.log('=====================================================================');
-    });
+    db.ref('/voices/all').once('value', function (snapshot) {
+          var obj = snapshot.val();
+          Object.keys(obj).forEach(function (id) {
+              var val = obj[id];
+              storage.refFromURL(val.voiceURL).getDownloadURL().then(function (voiceURL) {
+              console.log('Title:', val.title);
+              title_all.push(val.title);
+              linkURL_all.push(val.linkURL);
+              voiceURLs_all.push(voiceURL);
+              console.log('ID:', id);
+              console.log('Title:', val.title_all);
+              console.log('LinkURL:', val.linkURL_all);
+              console.log('VoiceURL:', voiceURL);
+              console.log('=====================================================================');
+              });
+          });
+          console.log('reading done');
+      });
+
+    db.ref('/voices/entertainment').once('value', function (snapshot) {
+          var obj = snapshot.val();
+          Object.keys(obj).forEach(function (id) {
+              var val = obj[id];
+              storage.refFromURL(val.voiceURL).getDownloadURL().then(function (voiceURL) {
+              console.log('Title:', val.title);
+              title_ent.push(val.title);
+              linkURL_ent.push(val.linkURL);
+              voiceURLs_ent.push(voiceURL);
+              console.log('ID:', id);
+              console.log('Title:', val.title);
+              console.log('LinkURL:', val.linkURL);
+              console.log('VoiceURL:', voiceURL);
+              console.log('=====================================================================');
+              });
+          });
+          console.log('reading done');
+      });
+
+    db.ref('/voices/fashion').once('value', function (snapshot) {
+          var obj = snapshot.val();
+          Object.keys(obj).forEach(function (id) {
+              var val = obj[id];
+              storage.refFromURL(val.voiceURL).getDownloadURL().then(function (voiceURL) {
+              console.log('Title:', val.title);
+              title_fac.push(val.title);
+              linkURL_fac.push(val.linkURL);
+              voiceURLs_fac.push(voiceURL);
+              console.log('ID:', id);
+              console.log('Title:', val.title);
+              console.log('LinkURL:', val.linkURL);
+              console.log('VoiceURL:', voiceURL);
+              console.log('=====================================================================');
+              });
+          });
+          console.log('reading done');
+      });
+
+    db.ref('/voices/gourmet').once('value', function (snapshot) {
+          var obj = snapshot.val();
+          Object.keys(obj).forEach(function (id) {
+              var val = obj[id];
+              storage.refFromURL(val.voiceURL).getDownloadURL().then(function (voiceURL) {
+              console.log('Title:', val.title);
+              title_gur.push(val.title);
+              linkURL_gur.push(val.linkURL);
+              voiceURLs_gur.push(voiceURL);
+              console.log('ID:', id);
+              console.log('Title:', val.title);
+              console.log('LinkURL:', val.linkURL);
+              console.log('VoiceURL:', voiceURL);
+              console.log('=====================================================================');
+              });
+          });
+          console.log('reading done');
+      });
+
+    db.ref('/voices/hobby').once('value', function (snapshot) {
+          var obj = snapshot.val();
+          Object.keys(obj).forEach(function (id) {
+              var val = obj[id];
+              storage.refFromURL(val.voiceURL).getDownloadURL().then(function (voiceURL) {
+              console.log('Title:', val.title);
+              title_hob.push(val.title);
+              linkURL_hob.push(val.linkURL);
+              voiceURLs_hob.push(voiceURL);
+              console.log('ID:', id);
+              console.log('Title:', val.title);
+              console.log('LinkURL:', val.linkURL);
+              console.log('VoiceURL:', voiceURL);
+              console.log('=====================================================================');
+              });
+          });
+          console.log('reading done');
+      });
+
+    db.ref('/voices/news').once('value', function (snapshot) {
+          var obj = snapshot.val();
+          Object.keys(obj).forEach(function (id) {
+              var val = obj[id];
+              storage.refFromURL(val.voiceURL).getDownloadURL().then(function (voiceURL) {
+              console.log('Title:', val.title);
+              title_new.push(val.title);
+              linkURL_new.push(val.linkURL);
+              voiceURLs_new.push(voiceURL);
+              console.log('ID:', id);
+              console.log('Title:', val.title);
+              console.log('LinkURL:', val.linkURL);
+              console.log('VoiceURL:', voiceURL);
+              console.log('=====================================================================');
+              });
+          });
+          console.log('reading done');
+      });
+
+    db.ref('/voices/sports').once('value', function (snapshot) {
+          var obj = snapshot.val();
+          Object.keys(obj).forEach(function (id) {
+              var val = obj[id];
+              storage.refFromURL(val.voiceURL).getDownloadURL().then(function (voiceURL) {
+              console.log('Title:', val.title);
+              title_spo.push(val.title);
+              linkURL_spo.push(val.linkURL);
+              voiceURLs_spo.push(voiceURL);
+              console.log('ID:', id);
+              console.log('Title:', val.title);
+              console.log('LinkURL:', val.linkURL);
+              console.log('VoiceURL:', voiceURL);
+              console.log('=====================================================================');
+              });
+          });
+          console.log('reading done');
+      });
+
+
+    
 
     // strage.refFromURL(val.voiceURL).getDownURL().then
     num = 0;
@@ -147,7 +500,7 @@
 			}
 	}
 
-	var index = 1;
+	var index = 2;
     function forw (){
       console.log(title[index]);
       //$("#art").text(title[index]);
@@ -158,6 +511,11 @@
 	  $("#art").text("");
 	  aTag.appendTo($("#art"));
       $("#audio").attr("src", voiceURLs[index]);
+      
+      if(num == 1){
+      	document.getElementById("audio").play();
+      }
+
       index++;
     }
 
@@ -172,6 +530,11 @@
 	  $("#art").text("");
 	  aTag.appendTo($("#art"));
       $("#audio").attr("src", voiceURLs[index]);
+      
+      if(num == 1){
+      	document.getElementById("audio").play();
+      }
+
       index--;
       }
     }
