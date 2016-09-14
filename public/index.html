@@ -185,7 +185,7 @@
 					  $("#art").text("");
 					  aTag.appendTo($("#art"));
 				      $("#audio").attr("src", voiceURLs[index]);
-				      index = 2;
+				      index = 1;
 		        }
 		    }
 		    var $sampleBElements = document.getElementsByClassName( "div_fac" );
@@ -482,6 +482,26 @@
           });
           console.log('reading done');
       });
+
+    db.ref('/voices/IT').once('value', function (snapshot) {
+          var obj = snapshot.val();
+          Object.keys(obj).forEach(function (id) {
+              var val = obj[id];
+              storage.refFromURL(val.voiceURL).getDownloadURL().then(function (voiceURL) {
+              console.log('Title:', val.title);
+              title_it.push(val.title);
+              linkURL_it.push(val.linkURL);
+              voiceURLs_it.push(voiceURL);
+              console.log('ID:', id);
+              console.log('Title:', val.title);
+              console.log('LinkURL:', val.linkURL);
+              console.log('VoiceURL:', voiceURL);
+              console.log('=====================================================================');
+              });
+          });
+          console.log('reading done');
+      });
+
 
 
     
