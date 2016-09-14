@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <title>test2</title>
+	<script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"</script>
+	<script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-  
-</head>
-<body>
 HelloWorld!
+<div id="no1">id:1</div>
+<div id="no2" class="c1">id:2</div>
+
+<div id="art">article</div>
 
 <script>
     var title = [];
@@ -32,11 +32,12 @@ HelloWorld!
               console.log('Title:', val.title);
               title.push(val.title);
               linkURL.push(val.linkURL);
-              //voiceURL.push(val.voiceURL);
+              
+              voiceURL.push(val.voiceURL);
               console.log('ID:', id);
               console.log('Title:', val.title);
               console.log('LinkURL:', val.linkURL);
-              //console.log('VoiceURL:', voiceURL);
+              console.log('VoiceURL:', voiceURL);
               console.log('=====================================================================');
               });
           });
@@ -71,7 +72,45 @@ HelloWorld!
       });
       console.log(title);
     }
-    var index = 0;
+
+    // strage.refFromURL(val.voiceURL).getDownURL().then
+    num = 0;
+	function change()
+	{
+		num++;
+		num %= 2;
+		if(num == 0){
+			document.myIMG.src = "img"+num+".png";
+			
+		}else if(num == 1){
+			document.myIMG.src = "img"+num+".png";
+			
+		}
+	}
+
+
+	var flg = 0;
+	function rewrite (){
+		$.getJSON("http://localhost:5001/dammy.json", rewrite_title1);
+	}
+	function rewrite_title1 (val){
+		console.log(val.data[0].title);
+		var title = val.data[0].title
+		var url = val.data[0].url
+
+		var aTag = $("<a>");
+		aTag.text(title);
+		aTag.attr("href", url)
+
+		$("#no1").text("");
+
+		aTag.appendTo($("#no1"));
+
+		
+		// $('#no1').append('<a href=http://www.google.com/></a>');
+
+	}
+	var index = 1;
     function rewrite2 (){
       console.log(title[index]);
       
@@ -80,80 +119,42 @@ HelloWorld!
 
     }
 
-    function rewrite3 (val){
-    
+    function forw (){
+      console.log(title[index]);
+      $("#art").text(title[index]);
+      index++;
+      
+    }
+
+    function prev (){
       if(index != 0){
         console.log(title[index]);
-        $("#no1").text(title[index]);
+        $("#art").text(title[index]);
         index--;
       }
     }
-    // strage.refFromURL(val.voiceURL).getDownURL().then
+
   </script>
 
-  <div id="no1">id:1</div>
 
-  <button id="btn">prev</button>
-  <button id="btn2">next</button>
+<div class="c_0">
+    <div class="c_1">
+    <div class="div_cent">
+    	<a href="javaScript:prev()">
+		<img src="prev.png" name="myIMGfor" width="52" height="60" border="0">
+		</a>
 
-  <script>
-  var cnt = 0;
-  var flg = 0;
-  function rewrite5 (){
-    // $.getJSON("http://localhost:5001/dammy.json", rewrite_title1);
-    var db = firebase.database();
-    var storage = firebase.storage();
+    	<a href="javaScript:change()">
+		<img src="img0.png" name="myIMG" width="52" height="60" border="0">
+		</a>
 
-    // console.log('Genres');
-    // db.ref('/voices').once('value', function(snapshot) {
-    //     console.log(snapshot.val());
-    //     console.log('=====================================================================');
-    // });
+    	　　<a href="javaScript:forw()">
+		<img src="for.png" name="myIMGfor" width="52" height="60" border="0">
+		</a>
 
-    db.ref('/voices/all').once('value', function (snapshot) {
-        var obj = snapshot.val();
-        Object.keys(obj).forEach(function (id) {
-            var val = obj[id];
-            storage.refFromURL(val.voiceURL).getDownloadURL().then(function (voiceURL) {
-            console.log('ID:', id);
-            //console.log('Title:', val.title);
-            //console.log('LinkURL:', val.linkURL);
-            //console.log('VoiceURL:', voiceURL);
-            console.log('=====================================================================');
-            });
-        });
-    });
+	</div>
+    </div>
+</div>
 
-  }
-  function rewrite_title1 (val){
-    console.log(val.data[0].title);
-    var title = val.data[0].title
-    var url = val.data[0].url
-
-    var aTag = $("<a>");
-    aTag.text(title);
-    aTag.attr("href", url)
-
-    $("#no1").text("");
-
-    aTag.appendTo($("#no1"));
-
-    
-    // $('#no1').append('<a href=http://www.google.com/></a>');
-
-  }
-
-
-
-  
-
-  
-
-  $("#btn").on("click", rewrite3);
-  $("#btn2").on("click", rewrite2);
-  
-  
-//一個ずつ増やしていく
-</script>
 </body>
 </html>

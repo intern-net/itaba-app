@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"</script>
+	<script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
     <meta charset="utf-8">
     <title>favclip station</title>
      <link rel="stylesheet" type="text/css" href="style.css">
@@ -92,7 +95,87 @@
 	</audio>
   </head>
   <body>
+<script>
+    var title = [];
+    var linkURL = [];
+    var voiceURLs = [];
 
+    firebase.initializeApp({
+    authDomain: 'favst-dojo.firebaseapp.com',
+    databaseURL: 'https://favst-dojo.firebaseio.com'
+    });
+
+    var db = firebase.database();
+    var storage = firebase.storage();
+
+    db.ref('/voices/all').once('value', function (snapshot) {
+          var obj = snapshot.val();
+          Object.keys(obj).forEach(function (id) {
+              var val = obj[id];
+              storage.refFromURL(val.voiceURL).getDownloadURL().then(function (voiceURL) {
+              console.log('Title:', val.title);
+              title.push(val.title);
+              linkURL.push(val.linkURL);
+              voiceURLs.push(voiceURL);
+              console.log('ID:', id);
+              console.log('Title:', val.title);
+              console.log('LinkURL:', val.linkURL);
+              //console.log('VoiceURL:', voiceURL);
+              console.log('=====================================================================');
+              });
+          });
+          console.log('reading done');
+      });
+
+    console.log('Genres');
+    db.ref('/voices').once('value', function(snapshot) {
+        console.log(snapshot.val());
+        console.log('=====================================================================');
+    });
+
+    // strage.refFromURL(val.voiceURL).getDownURL().then
+    num = 0;
+	function change(){
+			num++;
+			num %= 2;
+			if(num == 0){
+				document.myIMG.src = "img"+num+".png";
+				document.getElementById("audio").pause();
+			}else if(num == 1){
+				document.myIMG.src = "img"+num+".png";
+				document.getElementById("audio").play();
+			}
+	}
+
+	var index = 1;
+    function forw (){
+      console.log(title[index]);
+      //$("#art").text(title[index]);
+      var url = linkURL[index]
+	  var aTag = $("<a>");
+	  aTag.text(title[index]);
+	  aTag.attr("href", url)
+	  $("#art").text("");
+	  aTag.appendTo($("#art"));
+      index++;
+      
+    }
+
+    function prev (){
+      if(index != 0){
+        console.log(title[index]);
+        //$("#art").text(title[index]);
+        var url = linkURL[index]
+	  var aTag = $("<a>");
+	  aTag.text(title[index]);
+	  aTag.attr("href", url)
+	  $("#art").text("");
+	  aTag.appendTo($("#art"));
+        index--;
+      }
+    }
+
+</script>
 <div align="center"><img src="faclipstation.png" width="150"/></div>
 <!--  	 
  	 <div style="background: #FFB6C1; width:630px; border: 1px solid #CC0000; height:100％; padding-left:10px; padding-right:10px; padding-top:10px; padding-bottom:10px;">
@@ -135,19 +218,23 @@
     <br>
     <div id="sampleOutput" align="center">ALL</div>
     <div id="output" align="center">　</div>
+    <div id="art" align="center">article</div>
 
 
     <div class="c_0">
     <div class="c_1">
     <div class="div_cent">
-    	<img src="back.png" width="52" height="60" border="0">　　　
-    	<!-- <img src="saisei.png" width="52" height="60" border="0"> -->
-
-    	<a href="javaScript:change()">
-		<img src="img0.png" name="myIMG" width="52" height="60" border="0">
+    	<a href="javaScript:prev()">
+		<img src="prev.png" name="myIMGfor" width="52" height="60" border="0">
 		</a>
 
-    	　　<img src="for.png" width="52" height="60" border="0">
+    	<a href="javaScript:change()">
+		　　<img src="img0.png" name="myIMG" width="52" height="60" border="0">
+		</a>
+
+    	　　<a href="javaScript:forw()">
+		<img src="for.png" name="myIMGfor" width="52" height="60" border="0">
+		</a>
 
 	</div>
     </div>
